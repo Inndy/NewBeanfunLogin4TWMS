@@ -6,6 +6,10 @@ Use NewBeanfun starting game is very slow. So I analyzed HTTP requests and trans
 
 Now you can enjoy your MapleStory w/o f**king slow NewBeanfun.
 
+## Compile
+
+You need Visual Studio 2010 at least to compile this project.
+
 ## License
 
 This program released under [MIT License](LICENSE.md).
