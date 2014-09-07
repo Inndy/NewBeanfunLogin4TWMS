@@ -1,5 +1,9 @@
 # NewBeanfunLogin4TWMS
 
+## THIS IS AN ABANDONED PROJECT
+
+[NewBeanfunStarter](https://github.com/Inndy/NewBeanfunStarter) is developing.
+
 ## About this
 
 Use NewBeanfun starting game is very slow. So I analyzed HTTP requests and transform it into an standalone application.
