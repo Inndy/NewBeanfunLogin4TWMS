@@ -49,6 +49,7 @@
             this.pbCaptcha.Size = new System.Drawing.Size(200, 45);
             this.pbCaptcha.TabIndex = 13;
             this.pbCaptcha.TabStop = false;
+            this.pbCaptcha.Visible = false;
             // 
             // txtCaptcha
             // 
@@ -57,6 +58,7 @@
             this.txtCaptcha.Name = "txtCaptcha";
             this.txtCaptcha.Size = new System.Drawing.Size(134, 22);
             this.txtCaptcha.TabIndex = 12;
+            this.txtCaptcha.Visible = false;
             this.txtCaptcha.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TextBox_KeyUp);
             // 
             // label3
@@ -68,6 +70,7 @@
             this.label3.Size = new System.Drawing.Size(56, 16);
             this.label3.TabIndex = 11;
             this.label3.Text = "驗證碼：";
+            this.label3.Visible = false;
             // 
             // txtPwd
             // 
@@ -118,6 +121,7 @@
             this.btnRecaptcha.TabIndex = 14;
             this.btnRecaptcha.Text = "重新產生驗證碼";
             this.btnRecaptcha.UseVisualStyleBackColor = true;
+            this.btnRecaptcha.Visible = false;
             this.btnRecaptcha.Click += new System.EventHandler(this.btnRecaptcha_Click);
             // 
             // btnLogin
@@ -130,6 +134,7 @@
             this.btnLogin.TabIndex = 15;
             this.btnLogin.Text = "登入";
             this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Visible = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // bgwk
@@ -141,7 +146,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(228, 196);
+            this.ClientSize = new System.Drawing.Size(228, 76);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.btnRecaptcha);
             this.Controls.Add(this.pbCaptcha);
