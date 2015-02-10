@@ -150,12 +150,15 @@ namespace NewBeanfunLogin
                     start = ret.IndexOf("<li", start);
                     int end = ret.IndexOf("</ul>", start);
                     string[] accs = ret.Substring(start, end - start).Split(new string[] { "</li>" }, StringSplitOptions.RemoveEmptyEntries);
-                    Regex regAccount = new Regex(@"<div id=\x22(\w+)\x22 sn=\x22(\d+)\x22 name=\x22([^\x22]+)\x22");
+                    Regex regAccount = new Regex(@"<div id=\x22(\w+)\x22 sn=\x22(\d+)\x22 name=\x22([^\x22]+)\x22 inherited=\x22false\x22 visible=\x221\x22 class=\x22Account\x22 title=\x22(\S*)\x22");
                     foreach (string acc in accs)
                         if (regAccount.IsMatch(acc))
                         {
                             Match m = regAccount.Match(acc);
-                            list.Add(new BeanfunGameAccountData(m.Groups[1].Value, m.Groups[2].Value, WebUtility.HtmlDecode(m.Groups[3].Value)));
+                            if (m.Groups[4].Value == "\u7de8\u8f2f\u5e33\u6236")
+                                list.Add(new BeanfunGameAccountData(m.Groups[1].Value, m.Groups[2].Value, WebUtility.HtmlDecode(m.Groups[3].Value)));
+                            else
+                                break;
                         }
                 }
                 catch (Exception)
