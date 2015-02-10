@@ -44,9 +44,9 @@
             this.tmrAutoLogin = new System.Windows.Forms.Timer(this.components);
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.btnStartGame = new System.Windows.Forms.ToolStripSplitButton();
+            this.btnGetPassword = new System.Windows.Forms.ToolStripSplitButton();
             this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.bgwk_InjectDLL = new System.ComponentModel.BackgroundWorker();
-            this.btnGetPassword = new System.Windows.Forms.ToolStripSplitButton();
             this.panel1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -60,9 +60,9 @@
             this.lstAccount.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lstAccount.FullRowSelect = true;
             this.lstAccount.GridLines = true;
-            this.lstAccount.Location = new System.Drawing.Point(0, 22);
+            this.lstAccount.Location = new System.Drawing.Point(0, 20);
             this.lstAccount.Name = "lstAccount";
-            this.lstAccount.Size = new System.Drawing.Size(344, 162);
+            this.lstAccount.Size = new System.Drawing.Size(344, 148);
             this.lstAccount.TabIndex = 1;
             this.lstAccount.UseCompatibleStateImageBehavior = false;
             this.lstAccount.View = System.Windows.Forms.View.Details;
@@ -103,15 +103,15 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(344, 22);
+            this.panel1.Size = new System.Drawing.Size(344, 20);
             this.panel1.TabIndex = 2;
             // 
             // lblPath
             // 
             this.lblPath.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblPath.Location = new System.Drawing.Point(85, 0);
+            this.lblPath.Location = new System.Drawing.Point(83, 0);
             this.lblPath.Name = "lblPath";
-            this.lblPath.Size = new System.Drawing.Size(253, 22);
+            this.lblPath.Size = new System.Drawing.Size(255, 20);
             this.lblPath.TabIndex = 3;
             this.lblPath.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblPath.Click += new System.EventHandler(this.lblPath_Click);
@@ -122,7 +122,7 @@
             this.lblSpace2.Dock = System.Windows.Forms.DockStyle.Right;
             this.lblSpace2.Location = new System.Drawing.Point(338, 0);
             this.lblSpace2.Name = "lblSpace2";
-            this.lblSpace2.Size = new System.Drawing.Size(6, 22);
+            this.lblSpace2.Size = new System.Drawing.Size(6, 20);
             this.lblSpace2.TabIndex = 2;
             // 
             // chkAutoLogin
@@ -131,7 +131,7 @@
             this.chkAutoLogin.Dock = System.Windows.Forms.DockStyle.Left;
             this.chkAutoLogin.Location = new System.Drawing.Point(11, 0);
             this.chkAutoLogin.Name = "chkAutoLogin";
-            this.chkAutoLogin.Size = new System.Drawing.Size(74, 22);
+            this.chkAutoLogin.Size = new System.Drawing.Size(72, 20);
             this.chkAutoLogin.TabIndex = 0;
             this.chkAutoLogin.Text = "自動重啟";
             this.chkAutoLogin.UseVisualStyleBackColor = true;
@@ -142,7 +142,7 @@
             this.lblSpace1.Dock = System.Windows.Forms.DockStyle.Left;
             this.lblSpace1.Location = new System.Drawing.Point(0, 0);
             this.lblSpace1.Name = "lblSpace1";
-            this.lblSpace1.Size = new System.Drawing.Size(11, 22);
+            this.lblSpace1.Size = new System.Drawing.Size(11, 20);
             this.lblSpace1.TabIndex = 1;
             // 
             // tmrAutoLogin
@@ -156,7 +156,7 @@
             this.btnStartGame,
             this.btnGetPassword,
             this.lblStatus});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 184);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 168);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(344, 22);
             this.statusStrip1.TabIndex = 3;
@@ -167,14 +167,23 @@
             this.btnStartGame.Image = ((System.Drawing.Image)(resources.GetObject("btnStartGame.Image")));
             this.btnStartGame.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnStartGame.Name = "btnStartGame";
-            this.btnStartGame.Size = new System.Drawing.Size(88, 20);
+            this.btnStartGame.Size = new System.Drawing.Size(87, 20);
             this.btnStartGame.Text = "啟動遊戲";
             this.btnStartGame.ButtonClick += new System.EventHandler(this.btnStartGame_ButtonClick);
+            // 
+            // btnGetPassword
+            // 
+            this.btnGetPassword.Image = ((System.Drawing.Image)(resources.GetObject("btnGetPassword.Image")));
+            this.btnGetPassword.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnGetPassword.Name = "btnGetPassword";
+            this.btnGetPassword.Size = new System.Drawing.Size(87, 20);
+            this.btnGetPassword.Text = "取得帳密";
+            this.btnGetPassword.ButtonClick += new System.EventHandler(this.btnGetPassword_ButtonClick);
             // 
             // lblStatus
             // 
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(53, 17);
+            this.lblStatus.Size = new System.Drawing.Size(52, 17);
             this.lblStatus.Text = "預備中...";
             // 
             // bgwk_InjectDLL
@@ -182,25 +191,16 @@
             this.bgwk_InjectDLL.WorkerSupportsCancellation = true;
             this.bgwk_InjectDLL.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwk_InjectDLL_DoWork);
             // 
-            // btnGetPassword
-            // 
-            this.btnGetPassword.Image = ((System.Drawing.Image)(resources.GetObject("btnGetPassword.Image")));
-            this.btnGetPassword.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnGetPassword.Name = "btnGetPassword";
-            this.btnGetPassword.Size = new System.Drawing.Size(88, 20);
-            this.btnGetPassword.Text = "取得帳密";
-            this.btnGetPassword.ButtonClick += new System.EventHandler(this.btnGetPassword_ButtonClick);
-            // 
             // Form_Account
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(344, 206);
+            this.ClientSize = new System.Drawing.Size(344, 190);
             this.Controls.Add(this.lstAccount);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.statusStrip1);
             this.Name = "Form_Account";
-            this.Text = "啟動遊戲 -- By Inndy";
+            this.Text = "啟動遊戲";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_Account_FormClosing);
             this.Load += new System.EventHandler(this.Form_Account_Load);
             this.panel1.ResumeLayout(false);

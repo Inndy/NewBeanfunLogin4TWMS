@@ -146,7 +146,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(228, 76);
+            this.ClientSize = new System.Drawing.Size(239, 76);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.btnRecaptcha);
             this.Controls.Add(this.pbCaptcha);
