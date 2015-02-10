@@ -30,7 +30,7 @@ namespace NewBeanfunLogin
         {
             try
             {
-                string ret = spwc.DownloadString("https://tw.new.beanfun.com/beanfun_block/bflogin/default.aspx?service=999999_T0", Encoding.UTF8);
+                string ret = spwc.DownloadString("https://tw.beanfun.com/beanfun_block/bflogin/default.aspx?service=999999_T0", Encoding.UTF8);
                 string uri = spwc.ResponseUri.ToString();
                 Regex regLogin = new Regex(@"^https?://tw\.newlogin\.beanfun\.com/checkin_step2\.aspx\?skey=(\w{20})(&display)?");
 
@@ -113,9 +113,9 @@ namespace NewBeanfunLogin
                 }
                 catch (Exception) { throw new BeanfunLoginFailedException(); }
 
-                ret = Encoding.UTF8.GetString(spwc.UploadValues("https://tw.new.beanfun.com/beanfun_block/bflogin/return.aspx", data));
+                ret = Encoding.UTF8.GetString(spwc.UploadValues("https://tw.beanfun.com/beanfun_block/bflogin/return.aspx", data));
 
-                Regex regSuccess = new Regex(@"https?://tw\.new\.beanfun\.com/default\.aspx");
+                Regex regSuccess = new Regex(@"https?://tw\.beanfun\.com/default\.aspx");
 
                 if (!regSuccess.IsMatch(spwc.ResponseUri.ToString()))
                     throw new BeanfunLoginFailedException();
@@ -126,7 +126,7 @@ namespace NewBeanfunLogin
                  *     GET /beanfun_block/auth.aspx?channel=game_zone&page_and_query=game_start.aspx%3Fservice_code_and_region%3D610074_T9&web_token=3eb8306996a34ed7b8556bde31d0b0a3 HTTP/1.1
                  */
 
-                CookieCollection cookies = cc.GetCookies(new Uri("http://tw.new.beanfun.com"));
+                CookieCollection cookies = cc.GetCookies(new Uri("http://tw.beanfun.com"));
                 foreach (Cookie cookie in cookies)
                     if (cookie.Name == "bfWebToken")
                         this.webtoken = cookie.Value;
@@ -143,7 +143,7 @@ namespace NewBeanfunLogin
             {
                 List<BeanfunGameAccountData> list = new List<BeanfunGameAccountData>();
 
-                string ret = spwc.DownloadString("http://tw.new.beanfun.com/beanfun_block/auth.aspx?channel=game_zone&page_and_query=game_start.aspx%3Fservice_code_and_region%3D610074_T9&web_token=" + this.webtoken, Encoding.UTF8);
+                string ret = spwc.DownloadString("http://tw.beanfun.com/beanfun_block/auth.aspx?channel=game_zone&page_and_query=game_start.aspx%3Fservice_code_and_region%3D610074_T9&web_token=" + this.webtoken, Encoding.UTF8);
                 try
                 {
                     int start = ret.IndexOf("id=\"ulServiceAccountList\"");
@@ -175,7 +175,7 @@ namespace NewBeanfunLogin
         {
             try
             {
-                string ret = spwc.DownloadString("http://tw.new.beanfun.com/beanfun_block/game_zone/game_start_step2.aspx?service_code=610074&service_region=T9&sotp=" + acc.Number + "&dt=" + dt(), Encoding.UTF8);
+                string ret = spwc.DownloadString("http://tw.beanfun.com/beanfun_block/game_zone/game_start_step2.aspx?service_code=610074&service_region=T9&sotp=" + acc.Number + "&dt=" + dt(), Encoding.UTF8);
 
                 Regex regCT = new Regex(@"ServiceAccountCreateTime: \x22([^\x22]+)\x22");
                 string ct = regCT.Match(ret).Groups[1].Value;
@@ -195,12 +195,12 @@ namespace NewBeanfunLogin
                 data.Add("service_display_name", acc.Name);
                 data.Add("service_create_time", ct);
 
-                spwc.UploadValues("http://tw.new.beanfun.com/beanfun_block/generic_handlers/record_service_start.ashx", data);
+                spwc.UploadValues("http://tw.beanfun.com/beanfun_block/generic_handlers/record_service_start.ashx", data);
 
-                ret = spwc.DownloadString("http://tw.new.beanfun.com/generic_handlers/get_result.ashx?meth=GetResultByLongPolling&key=" + key + "&_=" + getUTCTime().ToString(), Encoding.UTF8);
+                ret = spwc.DownloadString("http://tw.beanfun.com/generic_handlers/get_result.ashx?meth=GetResultByLongPolling&key=" + key + "&_=" + getUTCTime().ToString(), Encoding.UTF8);
 
                 ret = spwc.DownloadString(
-                    "http://tw.new.beanfun.com/beanfun_block/generic_handlers/get_webstart_otp.ashx" +
+                    "http://tw.beanfun.com/beanfun_block/generic_handlers/get_webstart_otp.ashx" +
                     "?SN=" + key +
                     "&WebToken=" + this.webtoken +
                     "&SecretCode=" + secret +
@@ -228,7 +228,7 @@ namespace NewBeanfunLogin
         {
             try
             {
-                string ret = spwc.DownloadString("http://tw.new.beanfun.com/beanfun_block/generic_handlers/echo_token.ashx?webtoken=1");
+                string ret = spwc.DownloadString("http://tw.beanfun.com/beanfun_block/generic_handlers/echo_token.ashx?webtoken=1");
                 return ret.Contains("ResultCode:1");
             }
             catch (NotSupportedException)
