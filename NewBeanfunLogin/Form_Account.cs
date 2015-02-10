@@ -130,8 +130,16 @@ namespace NewBeanfunLogin
                     }
                     else
                     {
-                        e.Result = new Result(arg[0], false);
-                        lastGame = Process.Start(GamePath, "tw.login.maplestory.gamania.com 8484 BeanFun " + acc + " " + pwd);
+                        try
+                        {
+                            e.Result = new Result(arg[0], false);
+                            lastGame = Process.Start(GamePath, "tw.login.maplestory.gamania.com 8484 BeanFun " + acc + " " + pwd);
+                        }
+                        catch(Win32Exception w)
+                        {
+                            startingGame = false;
+                            MessageBox.Show("楓之谷在哪呢？" + w.Message);
+                        }
                     }
                     break;
                 case "getpwd":
@@ -232,6 +240,7 @@ namespace NewBeanfunLogin
                 StreamWriter sw = File.CreateText("gamepath.txt");
                 sw.Write(GamePath = ofd.FileName);
                 sw.Close();
+                lblPath.Text = GamePath;
             }
         }
 
