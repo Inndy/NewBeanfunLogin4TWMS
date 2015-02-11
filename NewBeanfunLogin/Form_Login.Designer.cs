@@ -134,7 +134,6 @@ namespace NewBeanfunLogin
             this.btnLogin.TabIndex = 15;
             this.btnLogin.Text = "登入 (Enter)";
             this.btnLogin.UseVisualStyleBackColor = true;
-            this.btnLogin.Visible = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // bgwk
