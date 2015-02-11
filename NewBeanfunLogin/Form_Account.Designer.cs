@@ -1,4 +1,4 @@
-﻿namespace NewBeanfunLogin
+namespace NewBeanfunLogin
 {
     partial class Form_Account
     {
