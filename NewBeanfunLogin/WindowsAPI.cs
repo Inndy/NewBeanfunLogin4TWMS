@@ -14,3 +14,4 @@ namespace NewBeanfunLogin
         public static extern uint GetWindowThreadProcessId(IntPtr hWnd, out int lpdwProcessId);
     }
 }
+
