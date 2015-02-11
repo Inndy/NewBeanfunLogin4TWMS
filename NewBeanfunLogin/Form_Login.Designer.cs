@@ -128,11 +128,11 @@ namespace NewBeanfunLogin
             // 
             this.btnLogin.Enabled = false;
             this.btnLogin.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(137, 157);
+            this.btnLogin.Location = new System.Drawing.Point(218, 12);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(75, 23);
+            this.btnLogin.Size = new System.Drawing.Size(57, 55);
             this.btnLogin.TabIndex = 15;
-            this.btnLogin.Text = "登入";
+            this.btnLogin.Text = "登入 (Enter)";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Visible = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
@@ -146,7 +146,7 @@ namespace NewBeanfunLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(239, 76);
+            this.ClientSize = new System.Drawing.Size(289, 76);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.btnRecaptcha);
             this.Controls.Add(this.pbCaptcha);
