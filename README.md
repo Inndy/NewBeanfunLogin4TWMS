@@ -13,3 +13,7 @@ You need Visual Studio 2010 at least to compile this project.
 ## License
 
 This program released under [MIT License](LICENSE.md).
+
+## Contributors
+
+[Contributors List](CONTRIBUTORS.md)
