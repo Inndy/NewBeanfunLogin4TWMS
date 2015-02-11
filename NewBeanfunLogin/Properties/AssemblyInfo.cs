@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("NewBeanfunLogin")]
 [assembly: AssemblyDescription("MapleStory Launcher")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("KNowlet")]
+[assembly: AssemblyCompany("Inndy")]
 [assembly: AssemblyProduct("NewBeanfunLogin")]
-[assembly: AssemblyCopyright("Copyright © Inndy 2014")]
+[assembly: AssemblyCopyright("Copyright © Inndy 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
