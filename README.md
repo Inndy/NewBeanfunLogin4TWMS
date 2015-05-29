@@ -1,5 +1,10 @@
 # NewBeanfunLogin4TWMS
 
+## Screnshots
+
+![Preview-01](http://1.bp.blogspot.com/-BJiXpg3lgSE/UvDwutBcnuI/AAAAAAAABtw/UC43rjysRho/s1600/01.png)
+![Preview-02](http://4.bp.blogspot.com/-G2DRI2mDtPo/UvDwuiKX9yI/AAAAAAAABts/38dOjqs6Vzs/s1600/02.png)
+
 ## About this
 
 Use NewBeanfun starting game is very slow. So I analyzed HTTP requests and transform it into an standalone application.
